@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-self: center;
+    text-align: center;
+    padding: 10px;
+}
+
+header img {
+    height: 80px;
+    max-width: 100%;
+}
+
+header p {
+    font-size: 20px;
+}
+
+.all-forms-container {
+    justify-self: center;
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.page-changing-buttons {
+    background-color: #F5F5F5;
+    padding: 4.3px;
+    border-radius: 7px;
+    display: flex;
+    gap: 5px;
+}
+
+#login-page,
+#create-pass-page {
+    background-color: #F5F5F5;
+    color: #737373;
+    padding: 5.5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+}
+
+#login-section,
+#create-pass-section {
+    border: 1px solid silver;
+    border-radius: 8px;
+    padding: 22px;
+    margin-top: 7.5px;
+}
+
+.text h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.text p {
+    color: #737373;
+    font-size: 14px;
+    line-height: 17px;
+    word-wrap: normal;
+}
+
+.cnic-box-1,
+.cnic-box-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.cnic-box-1 label,
+.cnic-box-2 label {
+    font-size: 14px;
+}
+
+.cnic-box-1 input,
+.cnic-box-2 input {
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 7px;
+}
+
+.pass-box-1,
+.pass-box-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pass-box-1 label,
+.pass-box-2 label {
+    font-size: 14px;
+}
+
+.pass-box-1 input,
+.pass-box-2 input {
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 7px;
+}
+
+.cnic-box-1 input:focus,
+.pass-box-1 input:focus,
+.cnic-box-2 input:focus,
+.pass-box-2 input:focus {
+    outline: 1px solid black;
+}
+
+.DOB-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.DOB-box label {
+    font-size: 14px;
+}
+
+.DOB-box input {
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 7px;
+    font-size: 17px;
+}
+
+.DOB-box input:focus {
+    outline: 1px solid black;
+}
+
+#login-btn,
+#submit-btn {
+    color: white;
+    background-color: #2B4F8C;
+    border: 1px solid #2B4F8C;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#login-btn:hover,
+#submit-btn:hover {
+    background-color: #0A2B70;
+}
+
+@media (max-width: 768px) {
+
+    .all-forms-container {
+        max-width: 90%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    header img {
+        height: 60px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .all-forms-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 220px) {
+
+    .page-changing-box {
+        flex-direction: column;
+        gap: none;
+    }
+
+}

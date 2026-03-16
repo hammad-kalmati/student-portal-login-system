@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="showLogin()">
+
+    <section id="both-forms-section">
+        <header>
+            <img src="assets/images/logo.6lrMPvRL.png" alt="Logo">
+            <p>Student Portal</p>
+        </header>
+
+        <div class="all-forms-container">
+
+            <div class="page-changing-buttons">
+                <button id="login-page" onclick="showLogin()">Login</button>
+                <button id="create-pass-page" onclick="showCreate()">Create Password</button>
+            </div>
+
+            <section id="login-section">
+                <div class="text">
+                    <h4>Login</h4>
+                    <p>Kindly provide the CNIC number and password used during SMIT course registration.</p>
+                </div>
+
+                <form action="">
+
+                    <div class="cnic-box-1">
+                        <label for="">CNIC *</label>
+                        <input type="text" name="" id="cnic-input-1">
+                    </div>
+
+                    <div class="pass-box-1">
+                        <label for="">Password *</label>
+                        <input type="password" name="" id="pass-input-1">
+                    </div>
+
+                    <button type="button" id="login-btn" onclick="handleLogin()">LOGIN</button>
+                </form>
+
+            </section>
+
+            <section id="create-pass-section">
+                <div class="text">
+                    <h4>Create a Password</h4>
+                    <p>Kindly provide the CNIC number and DOB used during SMIT course registration.</p>
+                </div>
+
+                <form action="">
+
+                    <div class="cnic-box-2">
+                        <label for="">CNIC *</label>
+                        <input type="text" name="" id="cnic-input-2">
+                    </div>
+
+                    <div class="DOB-box">
+                        <label for="">DOB *</label>
+                        <input type="date" name="" id="DOB-input">
+                    </div>
+
+                    <div class="pass-box-2">
+                        <label for="">Password *</label>
+                        <input type="password" name="" id="pass-input-2">
+                    </div>
+
+                    <button id="submit-btn" type="button" onclick="handleSubmit()">SUBMIT</button>
+                </form>
+
+            </section>
+
+        </div>
+
+    </section>
+
+    <section id="landing-page" style="display: none;">
+        <div class="page-head">Hello World</div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
