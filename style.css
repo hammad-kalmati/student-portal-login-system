@@ -5,18 +5,24 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: #F8FAFA;
+}
+
+#both-forms-section {
+    margin-top: 25px;
+}
+
 header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-self: center;
     text-align: center;
     padding: 10px;
 }
 
 header img {
     height: 80px;
-    max-width: 100%;
 }
 
 header p {
@@ -24,15 +30,14 @@ header p {
 }
 
 .all-forms-container {
-    justify-self: center;
-    margin: 10px;
+    margin: 10px auto;
     width: 100%;
     max-width: 400px;
 }
 
 .page-changing-buttons {
-    background-color: #F5F5F5;
-    padding: 4.3px;
+    background: #F5F5F5;
+    padding: 5px;
     border-radius: 7px;
     display: flex;
     gap: 5px;
@@ -40,14 +45,30 @@ header p {
 
 #login-page,
 #create-pass-page {
-    background-color: #F5F5F5;
+    background: #F5F5F5;
     color: #737373;
-    padding: 5.5px;
-    font-size: 14px;
-    border-radius: 5px;
+    padding: 6px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     flex: 1;
+}
+
+.active-tab {
+    background: white !important;
+    color: black !important;
+}
+
+#login-section {
+    display: block;
+}
+
+#create-pass-section {
+    display: none;
+}
+
+#landing-page {
+    display: none;
 }
 
 #login-section,
@@ -55,96 +76,44 @@ header p {
     border: 1px solid silver;
     border-radius: 8px;
     padding: 22px;
-    margin-top: 7.5px;
+    margin-top: 8px;
 }
 
 .text h4 {
-    font-weight: bold;
     margin-bottom: 5px;
 }
 
 .text p {
     color: #737373;
     font-size: 14px;
-    line-height: 17px;
-    word-wrap: normal;
 }
 
 .cnic-box-1,
-.cnic-box-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-}
-
-.cnic-box-1 label,
-.cnic-box-2 label {
-    font-size: 14px;
-}
-
-.cnic-box-1 input,
-.cnic-box-2 input {
-    padding: 10px;
-    border: 1px solid silver;
-    border-radius: 7px;
-}
-
+.cnic-box-2,
 .pass-box-1,
-.pass-box-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.pass-box-1 label,
-.pass-box-2 label {
-    font-size: 14px;
-}
-
-.pass-box-1 input,
-.pass-box-2 input {
-    padding: 10px;
-    border: 1px solid silver;
-    border-radius: 7px;
-}
-
-.cnic-box-1 input:focus,
-.pass-box-1 input:focus,
-.cnic-box-2 input:focus,
-.pass-box-2 input:focus {
-    outline: 1px solid black;
-}
-
+.pass-box-2,
 .DOB-box {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
-.DOB-box label {
-    font-size: 14px;
-}
-
-.DOB-box input {
+input {
     padding: 10px;
     border: 1px solid silver;
     border-radius: 7px;
-    font-size: 17px;
 }
 
-.DOB-box input:focus {
+input:focus {
     outline: 1px solid black;
 }
 
 #login-btn,
 #submit-btn {
     color: white;
-    background-color: #2B4F8C;
+    background: #2B4F8C;
     border: 1px solid #2B4F8C;
-    font-size: 14px;
     width: 100%;
     margin-top: 20px;
     border-radius: 7px;
@@ -154,37 +123,143 @@ header p {
 
 #login-btn:hover,
 #submit-btn:hover {
-    background-color: #0A2B70;
+    background: #0A2B70;
 }
 
-@media (max-width: 768px) {
+/* .landing-page-container {} */
+
+.landing-page {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0px 45px;
+    height: 105px;
+}
+
+.logo-and-input-box {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    width: 62%;
+}
+
+.smit-logo {
+    height: 55px;
+}
+
+.input-and-srch-svg-box {
+    width: 400px;
+    position: relative;
+}
+
+.input-and-srch-svg-box input {
+    width: 100%;
+    padding-left: 12px;
+    border: 1px solid #9CA3AF;
+    border-radius: 10px;
+    background-color: #F8FAFA;
+}
+
+.input-and-srch-svg-box svg {
+    height: 18px;
+    color: #9CA3AF;
+    position: absolute;
+    top: 9.5px;
+    right: 10px;
+}
+
+.select-and-buttons-box {
+    height: 55px;
+    width: 38%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.position-arrow {
+    position: relative;
+}
+
+select {
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #9CA3AF;
+    border-radius: 10px;
+    outline: none;
+    background-color: #F8FAFA;
+    color: #9CA3AF;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select:focus {
+    border: 1px solid black;
+    color: black;
+}
+
+.position-arrow svg {
+    height: 14px;
+    color: #9CA3AF;
+    position: absolute;
+    top: 11.5px;
+    right: 11.5px;
+    cursor: pointer;
+}
+
+
+.feedback-btn-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feedback-btn {
+    padding: 8px 16px;
+    background: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.logout-btn {
+    padding: 7.4px;
+    background: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.feedback-btn:hover,
+.logout-btn:hover {
+    cursor: pointer;
+    background-color: #2D2E2E;
+}
+
+
+.logout-btn svg {
+    height: 16px;
+}
+
+@media(max-width:1000px) {
+    .smit-logo {
+        height: 50px;
+    }
+
+    .landing-page {
+        padding: 0px 20p 0px 20px;
+    }
+}
+
+@media(max-width:768px) {
+    #both-forms-section {
+        margin-top: 32px;
+    }
 
     .all-forms-container {
         max-width: 90%;
     }
-
-}
-
-@media (max-width: 480px) {
-
-    header img {
-        height: 60px;
-    }
-
-    header p {
-        font-size: 18px;
-    }
-
-    .all-forms-container {
-        width: 95%;
-    }
-}
-
-@media (max-width: 220px) {
-
-    .page-changing-box {
-        flex-direction: column;
-        gap: none;
-    }
-
 }

@@ -1,27 +1,26 @@
+var details = [];
+
+var loginSection = document.getElementById("login-section");
+var createSection = document.getElementById("create-pass-section");
+
+var loginBtn = document.getElementById("login-page");
+var createBtn = document.getElementById("create-pass-page");
+
 function showLogin() {
-    document.getElementById("login-section").style.display = "block";
-    document.getElementById("create-pass-section").style.display = "none";
+    loginSection.style.display = "block";
+    createSection.style.display = "none";
 
-    document.getElementById("login-page").style.color = "black";
-    document.getElementById("login-page").style.backgroundColor = "white";
-
-    document.getElementById("create-pass-page").style.color = "#737373";
-    document.getElementById("create-pass-page").style.backgroundColor = "#F5F5F5";
+    loginBtn.classList.add("active-tab");
+    createBtn.classList.remove("active-tab");
 }
 
 function showCreate() {
-    document.getElementById("login-section").style.display = "none";
-    document.getElementById("create-pass-section").style.display = "block";
+    loginSection.style.display = "none";
+    createSection.style.display = "block";
 
-    document.getElementById("create-pass-page").style.color = "black";
-    document.getElementById("create-pass-page").style.backgroundColor = "white";
-
-    document.getElementById("login-page").style.color = "#737373";
-    document.getElementById("login-page").style.backgroundColor = "#F5F5F5";
+    createBtn.classList.add("active-tab");
+    loginBtn.classList.remove("active-tab");
 }
-
-
-var details = [];
 
 function handleSubmit() {
     var getCNIC = document.getElementById('cnic-input-2').value;
@@ -43,26 +42,26 @@ function handleSubmit() {
                     PASS: getPassword
                 });
 
-                var getCNIC = document.getElementById('cnic-input-2').value = '';
-                var getPassword = document.getElementById('pass-input-2').value = '';
-                var getDOB = document.getElementById('DOB-input').value = '';
+                document.getElementById('cnic-input-2').value = '';
+                document.getElementById('pass-input-2').value = '';
+                document.getElementById('DOB-input').value = '';
 
 
                 console.log(details);
                 alert("Data submitted successfully");
+
+                showLogin();
             }
 
         } else {
             alert("CNIC must contain exactly 13 numbers !");
         }
     }
-
 }
 
 function handleLogin() {
     var getCNIC = document.getElementById('cnic-input-1').value;
     var getPassword = document.getElementById('pass-input-1').value;
-
     var isLoginValid = false;
 
     if (getCNIC === '' || getPassword === '') {
@@ -73,24 +72,34 @@ function handleLogin() {
             if (getCNIC === details[i].CNIC && getPassword === details[i].PASS) {
 
                 isLoginValid = true;
+                break;
             }
         }
 
         if (isLoginValid) {
             alert('Login Succssesfull');
 
-            afterLogin();
+            document.getElementById('pass-input-1').value = '';
+            document.getElementById('cnic-input-1').value = '';
 
-            var getCNIC = document.getElementById('cnic-input-1').value = '';
-            var getPassword = document.getElementById('pass-input-1').value = '';
+            afterLogin();
         } else {
             alert('Please enter valid credintials !');
+
+            document.getElementById('cnic-input-1').value = '';
+            document.getElementById('pass-input-1').value = '';
         }
     }
 }
 
-function afterLogin() {
-    document.getElementById('landing-page').style.display = 'block';
-    document.getElementById('both-forms-section').style.display = 'none';
+afterLogin();
 
+function afterLogin() {
+    var bothForms = document.getElementById('both-forms-section').style.display = 'none';
+    var landingPage = document.getElementById('landing-page-container').style.display = 'block';
+}
+
+function handleLogout() {
+    var landingPage = document.getElementById('landing-page-container').style.display = 'none';
+    var bothForms = document.getElementById('both-forms-section').style.display = 'block';
 }
