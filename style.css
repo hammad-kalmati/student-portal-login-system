@@ -99,12 +99,6 @@ header p {
     margin-top: 20px;
 }
 
-#DOB-input[type="date"] {
-    width: 100%;
-    display: block;
-    flex: 1;
-}
-
 input {
     padding: 10px;
     border: 1px solid silver;
@@ -254,6 +248,17 @@ select:focus {
 }
 
 @media(max-width:768px) {
+    .DOB-box {
+        width: 100%;
+    }
+
+    #DOB-input[type="date"] {
+        width: 100%;
+        display: block;
+        flex: 1;
+        background-color: red;
+    }
+
     #both-forms-section {
         margin-top: 32px;
     }
