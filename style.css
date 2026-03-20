@@ -101,6 +101,8 @@ header p {
 
 #DOB-input[type="date"] {
     width: 100%;
+    display: block;
+    flex: 1;
 }
 
 input {
