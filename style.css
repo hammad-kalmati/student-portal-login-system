@@ -99,6 +99,10 @@ header p {
     margin-top: 20px;
 }
 
+#DOB-input[type="date"] {
+    width: 100%;
+}
+
 input {
     padding: 10px;
     border: 1px solid silver;
