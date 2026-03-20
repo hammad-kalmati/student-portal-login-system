@@ -141,7 +141,7 @@ input:focus {
     align-items: center;
     gap: 50px;
     justify-content: space-between;
-    width: 62%;
+    flex: 1.5;
 }
 
 .smit-logo {
@@ -149,7 +149,8 @@ input:focus {
 }
 
 .input-and-srch-svg-box {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     position: relative;
 }
 
@@ -159,6 +160,9 @@ input:focus {
     border: 1px solid #9CA3AF;
     border-radius: 10px;
     background-color: #F8FAFA;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .input-and-srch-svg-box svg {
@@ -170,8 +174,7 @@ input:focus {
 }
 
 .select-and-buttons-box {
-    height: 55px;
-    width: 38%;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -244,16 +247,6 @@ select:focus {
     height: 16px;
 }
 
-@media(max-width:1000px) {
-    .smit-logo {
-        height: 50px;
-    }
-
-    .landing-page {
-        padding: 0px 20p 0px 20px;
-    }
-}
-
 @media(max-width:768px) {
     #both-forms-section {
         margin-top: 32px;
@@ -262,4 +255,100 @@ select:focus {
     .all-forms-container {
         max-width: 90%;
     }
+
+    .landing-page {
+        flex-direction: column;
+        padding: 10px;
+        gap: 8px;
+        height: fit-content;
+    }
+
+    .logo-and-input-box {
+        width: 100%;
+        gap: 25px;
+    }
+
+    .select-and-buttons-box {
+        width: 100%;
+        gap: 25px;
+    }
+}
+
+@media(max-width:350px) {
+    .select-and-buttons-box {
+        gap: 12px;
+    }
+
+    select {
+        padding: 11.2px 32px 11.2px 11.2px;
+        font-size: 12.5px;
+    }
+
+    .position-arrow svg {
+        height: 13px;
+        top: 12px;
+        right: 9px;
+    }
+
+    .feedback-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .logout-btn {
+        padding: 10px 5px;
+    }
+
+    .logout-btn svg {
+        height: 13px;
+    }
+}
+
+@media(max-width:280px) {
+    .select-and-buttons-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    select {
+        padding: 10px 40px 10px 15px;
+    }
+
+    .position-arrow svg {
+        height: 13px;
+        top: 12px;
+        right: 9px;
+    }
+
+    .feedback-btn-box {
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .feedback-btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .logout-btn {
+        padding: 7.4px;
+    }
+
+    .logout-btn svg {
+        height: 16px;
+    }
+
+    .position-arrow {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .input-and-srch-svg-box svg {
+        display: none;
+    }
+
 }
