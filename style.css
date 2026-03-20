@@ -256,7 +256,7 @@ select:focus {
         width: 100%;
         display: block;
         flex: 1;
-        background-color: red;
+        background-color: white;
     }
 
     #both-forms-section {
