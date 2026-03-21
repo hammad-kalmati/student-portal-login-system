@@ -92,8 +92,6 @@ function handleLogin() {
     }
 }
 
-afterLogin();
-
 function afterLogin() {
     var bothForms = document.getElementById('both-forms-section').style.display = 'none';
     var landingPage = document.getElementById('landing-page-container').style.display = 'block';

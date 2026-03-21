@@ -73,7 +73,7 @@ header p {
 
 #login-section,
 #create-pass-section {
-    border: 1px solid silver;
+    border: 1px solid #E5E5E5;
     border-radius: 8px;
     padding: 22px;
     margin-top: 8px;
@@ -101,7 +101,7 @@ header p {
 
 input {
     padding: 10px;
-    border: 1px solid silver;
+    border: 1px solid #E5E5E5;
     border-radius: 7px;
 }
 
@@ -126,7 +126,9 @@ input:focus {
     background: #0A2B70;
 }
 
-/* .landing-page-container {} */
+#landing-page-container {
+    display: none;
+}
 
 .landing-page {
     display: flex;
@@ -139,13 +141,21 @@ input:focus {
 .logo-and-input-box {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 35px;
     justify-content: space-between;
     flex: 1.5;
 }
 
 .smit-logo {
     height: 55px;
+}
+
+.profile-circle {
+    display: none;
+}
+
+.profile-circle img {
+    display: none;
 }
 
 .input-and-srch-svg-box {
@@ -157,7 +167,7 @@ input:focus {
 .input-and-srch-svg-box input {
     width: 100%;
     padding-left: 12px;
-    border: 1px solid #9CA3AF;
+    border: 1px solid #E5E5E5;
     border-radius: 10px;
     background-color: #F8FAFA;
     white-space: nowrap;
@@ -166,11 +176,15 @@ input:focus {
 }
 
 .input-and-srch-svg-box svg {
-    height: 18px;
+    height: 36.5px;
     color: #9CA3AF;
     position: absolute;
-    top: 9.5px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
+    background-color: #F8FAFA;
+    border: 1px solid #E5E5E5;
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px 15px;
 }
 
 .select-and-buttons-box {
@@ -178,7 +192,7 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 35px;
 }
 
 .position-arrow {
@@ -187,7 +201,7 @@ input:focus {
 
 select {
     padding: 10px 40px 10px 15px;
-    border: 1px solid #9CA3AF;
+    border: 1px solid #E5E5E5;
     border-radius: 10px;
     outline: none;
     background-color: #F8FAFA;
@@ -229,7 +243,7 @@ select:focus {
 }
 
 .logout-btn {
-    padding: 7.4px;
+    padding: 8px 10px;
     background: black;
     color: white;
     border: 1px solid black;
@@ -248,6 +262,55 @@ select:focus {
 }
 
 @media(max-width:768px) {
+    .landing-page {
+        padding: 15px 7px;
+        height: fit-content;
+        gap: 0;
+    }
+
+    .smit-logo {
+        display: none;
+    }
+
+    .profile-circle {
+        display: block;
+    }
+
+    .profile-circle img {
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        object-fit: fill;
+        margin-left: 17px;
+    }
+
+    .logout-btn {
+        margin-right: 17px;
+    }
+
+    .logo-and-input-box {
+        flex-direction: column;
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    .input-and-srch-svg-box {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .select-and-buttons-box {
+        flex-direction: column-reverse;
+        gap: 25px;
+        align-items: flex-end;
+        height: 101px;
+    }
+
+    .feedback-btn-box {
+        gap: 8px;
+    }
+
     .DOB-box {
         width: 100%;
     }
@@ -258,108 +321,6 @@ select:focus {
         flex: 1;
         background-color: white;
     }
-
-    #both-forms-section {
-        margin-top: 32px;
-    }
-
-    .all-forms-container {
-        max-width: 90%;
-    }
-
-    .landing-page {
-        flex-direction: column;
-        padding: 10px;
-        gap: 8px;
-        height: fit-content;
-    }
-
-    .logo-and-input-box {
-        width: 100%;
-        gap: 25px;
-    }
-
-    .select-and-buttons-box {
-        width: 100%;
-        gap: 25px;
-    }
 }
 
-@media(max-width:350px) {
-    .select-and-buttons-box {
-        gap: 12px;
-    }
-
-    select {
-        padding: 11.2px 32px 11.2px 11.2px;
-        font-size: 12.5px;
-    }
-
-    .position-arrow svg {
-        height: 13px;
-        top: 12px;
-        right: 9px;
-    }
-
-    .feedback-btn {
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-
-    .logout-btn {
-        padding: 10px 5px;
-    }
-
-    .logout-btn svg {
-        height: 13px;
-    }
-}
-
-@media(max-width:280px) {
-    .select-and-buttons-box {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    select {
-        padding: 10px 40px 10px 15px;
-    }
-
-    .position-arrow svg {
-        height: 13px;
-        top: 12px;
-        right: 9px;
-    }
-
-    .feedback-btn-box {
-        justify-content: space-between;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .feedback-btn {
-        padding: 8px 16px;
-        font-size: 16px;
-    }
-
-    .logout-btn {
-        padding: 7.4px;
-    }
-
-    .logout-btn svg {
-        height: 16px;
-    }
-
-    .position-arrow {
-        width: 100%;
-    }
-
-    select {
-        width: 100%;
-    }
-
-    .input-and-srch-svg-box svg {
-        display: none;
-    }
-
-}
+@media(max-width:320px) {}
