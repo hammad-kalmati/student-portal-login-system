@@ -1,4 +1,4 @@
-var details = [];
+var details = JSON.parse(localStorage.getItem("studentData")) || [];
 
 var loginSection = document.getElementById("login-section");
 var createSection = document.getElementById("create-pass-section");
@@ -41,6 +41,8 @@ function handleSubmit() {
                     DOB: getDOB,
                     PASS: getPassword
                 });
+
+                localStorage.setItem("studentData", JSON.stringify(details));
 
                 document.getElementById('cnic-input-2').value = '';
                 document.getElementById('pass-input-2').value = '';
