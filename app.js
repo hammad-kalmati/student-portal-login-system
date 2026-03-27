@@ -26,6 +26,7 @@ function handleSubmit() {
     var getCNIC = document.getElementById('cnic-input-2').value;
     var getPassword = document.getElementById('pass-input-2').value;
     var getDOB = document.getElementById('DOB-input').value;
+    var submitValid = false;
 
     if (getCNIC === '' || getPassword === '' || getDOB === '') {
         alert('CNIC Password and Date of Birth is must required for submit !');
@@ -36,23 +37,35 @@ function handleSubmit() {
             if (getPassword.length < 7) {
                 alert('Password must be at least 7 characters long !');
             } else {
-                details.push({
-                    CNIC: getCNIC,
-                    DOB: getDOB,
-                    PASS: getPassword
-                });
 
-                localStorage.setItem("studentData", JSON.stringify(details));
+                for (var i = 0; i < details.length; i++) {
+                    if (getCNIC === details[i].CNIC) {
 
-                document.getElementById('cnic-input-2').value = '';
-                document.getElementById('pass-input-2').value = '';
-                document.getElementById('DOB-input').value = '';
+                        submitValid = true;
+                        break;
+                    }
+                }
 
+                if (submitValid) {
+                    alert('User Already Registered !');
+                } else {
+                    details.push({
+                        CNIC: getCNIC,
+                        DOB: getDOB,
+                        PASS: getPassword
+                    });
 
-                console.log(details);
-                alert("Data submitted successfully");
+                    localStorage.setItem("studentData", JSON.stringify(details));
 
-                showLogin();
+                    document.getElementById('cnic-input-2').value = '';
+                    document.getElementById('pass-input-2').value = '';
+                    document.getElementById('DOB-input').value = '';
+
+                    console.log(details);
+                    alert("Data submitted successfully");
+
+                    showLogin();
+                }
             }
 
         } else {
@@ -64,7 +77,7 @@ function handleSubmit() {
 function handleLogin() {
     var getCNIC = document.getElementById('cnic-input-1').value;
     var getPassword = document.getElementById('pass-input-1').value;
-    var isLoginValid = false;
+    var loginValid = false;
 
     if (getCNIC === '' || getPassword === '') {
         alert('CNIC and Password both required for login !');
@@ -73,12 +86,12 @@ function handleLogin() {
         for (var i = 0; i < details.length; i++) {
             if (getCNIC === details[i].CNIC && getPassword === details[i].PASS) {
 
-                isLoginValid = true;
+                loginValid = true;
                 break;
             }
         }
 
-        if (isLoginValid) {
+        if (loginValid) {
             alert('Login Succssesfull');
 
             document.getElementById('pass-input-1').value = '';
